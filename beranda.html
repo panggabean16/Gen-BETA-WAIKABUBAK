@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - Gen-BETA'²⁵,WAIKABUBAK</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: pink;
+            background-image: url('assets/background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: #ff6f61;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: black;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%23cccccc" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo-img {
+            width: 80px;
+            margin-right: 30px;
+        }
+
+        header .logo-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Navigation Menu */
+        nav {
+            position: fixed;
+            top: 100px; /* Sesuaikan jarak dari header */
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.8); /* Latar belakang semi-transparan */
+            z-index: 999;
+        }
+
+        nav button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 250px 10% 150px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            color: blue;
+            text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 30px white;
+            margin-bottom: 20px;
+        }
+
+        /* Layanan Section */
+        .layanan-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 50px 0;
+            white-space: nowrap;
+        }
+
+        .layanan-card {
+            display: inline-block;
+            margin: 0 15px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom right, gold, goldenrod);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            animation: scroll-right 8s linear infinite;
+        }
+
+        .layanan-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Animasi */
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Deskripsi Section */
+        .description {
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .description p {
+            font-size: 40px;
+            color: #00FF00;
+            text-shadow: 0 0 10px gold, 0 0 20px  gold, 0 0 30px white;
+            margin-bottom: 80px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px 10%;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        footer p {
+            font-size: 1.5rem;
+            color: #000000;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 395;
+            text-transform: uppercase;
+        }
+
+        /* Tombol Start */
+        .start-button {
+            display: block;
+            margin: 50px auto;
+            width: 110px;
+            height: 80px;
+            border-radius: 25px;
+            background-color: #FFA500;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .start-button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo Gen-BETA" class="logo-img">
+            <div class="logo-text">GEN-BETA'²⁵,WAIKABUBAK</div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='trans-line.html'">Trans-Line</button>
+        <button onclick="location.href='mall-line.html'">Mall-Line</button>
+        <button onclick="location.href='ppob.html'">PPOB</button>
+        <button onclick="location.href='index.html'">Ticket-Line</button>
+        <button onclick="location.href='service-line.html'">Service-Line</button>
+        <button onclick="location.href='travel.html'">TraVel</button>
+        <button onclick="location.href='call-police.html'">Call Police</button>
+    </nav>
+
+    <section class="hero">
+        <h1>WELCOME to GEN-BETA'²⁵,WAIKABUBAK</h1>
+    </section>
+
+    <div class="layanan-container">
+        <div class="layanan-card">
+            <img src="assets/logo2.png" alt="Trans-line">
+        </div>
+        <div class="layanan-card">
+            <img src="assets/logo104.png" alt="Mall-line">
+        </div>
+        <div class="layanan-card">
+            <img src="assets/logo105.png" alt="PPOB">
+        </div>
+        <div class="layanan-card">
+            <img src="assets/logo106.png" alt="Ticket-line">
+        </div>
+        <div class="layanan-card">
+            <img src="assets/logo019.png" alt="Tour & Travel">
+        </div>
+        <div class="layanan-card">
+            <img src="assets/logo107.png" alt="Call-Urgently">
+        </div>
+    </div>
+
+    <section class="description">
+        <p>KOMUNITAS WAIKABUBAK,city</p>
+        <p>BERSATU, BERKREASI, DAN BERPRESTASI</p>
+    </section>
+
+    <button class="start-button" onclick="window.location.href='register.html'">START</button>
+
+    <footer>
+        <p>© 2024 GEN-BETA'²⁵, WAIKABUBAK</p>
+    </footer>
+</body>
+</html>

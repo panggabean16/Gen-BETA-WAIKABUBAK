@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trans-Line - Waikabubak Gen-BETA</title>
+    <style>
+        /* Global Styles */
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+        }
+
+        .header-logo-container {
+            width: 100%;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo-img {
+            width: 435px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .logo-text {
+            font-size: 49px;
+            font-weight: bold;
+            background: linear-gradient(90deg, 
+                #ff0000, #ff8000, #ffff00, 
+                #00ff00, #00ffff, #0000ff, 
+                #8000ff, #ff0080);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 5s linear infinite;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            margin-top: 15px;
+        }
+
+         nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #2980b9;
+        }
+
+        nav a:hover {
+            color: #00ff88;
+        }
+
+        /* Service Grid */
+        .services-container {
+            padding: 120px 10% 50px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #333;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #00ff88;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.5em;
+            margin: 15px 0;
+            color: #00ff88;
+        }
+
+        .tabs-button {
+            background: #00ff88;
+            color: #1a1a1a;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .tabs-button:hover {
+            background: #00cc6a;
+        }
+
+        /* Booking Page Styles */
+        .booking-container {
+            padding: 120px 10% 50px;
+        }
+
+        .map-container {
+            height: 60vh;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+            border: 2px solid #00ff88;
+        }
+
+        .input-group {
+            margin: 25px 0;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 15px;
+            background: #333;
+            border: 1px solid #00ff88;
+            color: #fff;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .deal-button {
+            background: #00ff88;
+            color: #1a1a1a;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto;
+            transition: background 0.3s;
+        }
+
+        .deal-button:hover {
+            background: #00cc6a;
+        }
+
+        .price-display {
+            font-size: 1.5em;
+            color: #00ff88;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .additional-menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Tombol Menu */
+        .menu-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .menu-buttons button {
+            background: #1abc9c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .menu-buttons button:hover {
+            background: #16a085;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKbRaOwndCtFQLW0oDFnuAe4WJTmof88M&libraries=places&callback=initMap" async defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-logo-container">
+            <img src="assets/logo.png" class="logo-img" alt="Logo">
+            <div class="logo-text">
+                Gen-BETA'²⁵, WAIKABUBAK
+            </div>
+        </div>
+         <nav>
+                <button onclick="location.href='beranda.html'">Home</button>
+                <button onclick="location.href='trans-line.html'">Trans-Line</button>
+                <button onclick="location.href='mall-line.html'">Mall-Line</button>
+                <button onclick="location.href='ppob.html'">PPOB</button>
+                <button onclick="location.href='index.html'">Ticket-Line</button>
+                <button onclick="location.href='service-line.html'">Service-Line</button>
+                <button onclick="location.href='travel.html'">TraVel</button>
+                <button onclick="location.href='call-police.html'">Call Police</button>
+            </nav>
+       </div>
+
+    <div class="services-container" id="serviceSelection">
+        <div class="service-card">
+            <img src="assets/logo2.png" class="service-logo" alt="JekMo-Line">
+            <h2 class="service-title">JekMo-Line</h2>
+            <p>Layanan Ojek Motor Premium</p>
+            <p>Tarif: Rp 2,475/km</p>
+            <button class="tabs-button" onclick="selectService('jekmo')">Tabs</button>
+        </div>
+        <div class="service-card">
+            <img src="assets/logo3.png" class="service-logo" alt="X-Line">
+            <h2 class="service-title">X-Line</h2>
+            <p>Layanan Taxi Eksekutif</p>
+            <p>Tarif: Rp 4,500/km</p>
+            <button class="tabs-button" onclick="selectService('xline')">Tabs</button>
+        </div>
+        <div class="service-card">
+            <img src="assets/logo4.png" class="service-logo" alt="DelLine">
+            <h2 class="service-title">DelLine</h2>
+            <p>Layanan Pengiriman Barang</p>
+            <p>Tarif: Rp 3,200/km</p>
+            <button class="tabs-button" onclick="selectService('delline')">Tabs</button>
+        </div>
+    </div>
+    <div class="booking-container" id="bookingPage" style="display: none;">
+        <button class="tabs-button" onclick="showServiceSelection()">Kembali</button>
+        <div class="input-group">
+            <input type="text" id="origin" class="input-field" placeholder="Dari (Lokasi Anda)" readonly>
+        </div>
+        <div class="input-group">
+            <input type="text" id="destination" class="input-field" placeholder="Tujuan">
+        </div>
+        <div class="map-container" id="map"></div>
+        <div class="price-display" id="price">Estimasi Biaya: Rp 0</div>
+        <button class="deal-button" onclick="confirmBooking()">DEAL</button>
+    </div>
+
+    <script>
+        let map;
+        let directionsService;
+        let directionsRenderer;
+        let currentService;
+        let userLocation;
+        const TARIF = {
+            jekmo: 2475,
+            xline: 4500,
+            delline: 3200
+        };
+
+        // Initialize Map
+        function initMap() {
+            navigator.geolocation.getCurrentPosition(position => {
+                userLocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                document.getElementById('origin').value = 
+                    `Lokasi Saat Ini: ${userLocation.lat.toFixed(6)}, ${userLocation.lng.toFixed(6)}`;
+
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: userLocation,
+                    zoom: 15,
+                    styles: [
+                        {elementType: 'geometry', stylers: [{color: '#2d2d2d'}]},
+                        {elementType: 'labels.text.stroke', stylers: [{color: '#1a1a1a'}]},
+                        {elementType: 'labels.text.fill', stylers: [{color: '#00ff88'}]}
+                    ]
+                });
+
+                addNearbyDrivers(userLocation);
+                directionsService = new google.maps.DirectionsService();
+                directionsRenderer = new google.maps.DirectionsRenderer({
+                    polylineOptions: {strokeColor: '#00ff88'},
+                    map: map
+                });
+
+                const autocomplete = new google.maps.places.Autocomplete(
+                    document.getElementById('destination')
+                );
+                autocomplete.addListener('place_changed', () => {
+                    calculateRoute();
+                });
+            });
+        }
+
+        function addNearbyDrivers(center) {
+            for(let i = 0; i < 5; i++) {
+                const driverPos = {
+                    lat: center.lat + (Math.random() - 0.5) * 0.005,
+                    lng: center.lng + (Math.random() - 0.5) * 0.005
+                };
+                new google.maps.Marker({
+                    position: driverPos,
+                    map: map,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        fillColor: '#00ff88',
+                        fillOpacity: 1,
+                        strokeColor: '#1a1a1a',
+                        strokeWeight: 2,
+                        scale: 6
+                    }
+                });
+            }
+        }
+
+        function calculateRoute() {
+            const destination = document.getElementById('destination').value;
+            directionsService.route({
+                origin: userLocation,
+                destination: destination,
+                travelMode: google.maps.TravelMode.DRIVING
+            }, (response, status) => {
+                if (status === 'OK') {
+                    directionsRenderer.setDirections(response);
+                    const distance = response.routes[0].legs[0].distance.value;
+                    const price = Math.max(distance/1000, 2) * TARIF[currentService];
+                    document.getElementById('price').innerHTML = 
+                        `Estimasi Biaya: Rp ${Math.round(price).toLocaleString('id-ID')}`;
+                }
+            });
+        }
+
+        function selectService(service) {
+            currentService = service;
+            document.getElementById('serviceSelection').style.display = 'none';
+            document.getElementById('bookingPage').style.display = 'block';
+            initMap();
+        }
+
+        function showServiceSelection() {
+            document.getElementById('serviceSelection').style.display = 'grid';
+            document.getElementById('bookingPage').style.display = 'none';
+        }
+
+        function confirmBooking() {
+            const tripData = {
+                service: currentService,
+                origin: userLocation,
+                destination: document.getElementById('destination').value,
+                price: document.getElementById('price').innerText,
+                timestamp: new Date().toISOString()
+            };
+            let history = JSON.parse(localStorage.getItem('trips') || '[]');
+            history.push(tripData);
+            localStorage.setItem('trips', JSON.stringify(history));
+            alert('Pesanan berhasil! Driver terdekat akan menghubungi Anda.');
+            showServiceSelection();
+        }
+
+        function goToPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mall-Line - Gen-BETA'²⁵</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: white;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+            border-bottom: 2px solid orange;
+        }
+
+        .header .logo-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+        }
+
+        .header img {
+            height: auto;
+        }
+
+        .header .logo-left {
+            width: 65px;
+        }
+
+        .header .logo-right {
+            width: 50px;
+        }
+
+        .header .title {
+            font-size: 45px;
+            font-weight: bold;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .header .title::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: orange;
+            margin-top: 5px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .search-box input {
+            width: 200px; /* Lebar kolom search */
+            height: 20px; /* Tinggi kolom search */
+            padding: 5px;
+            border: 1px solid orange;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: orange; /* Warna latar tombol */
+            color: white; /* Warna teks tombol */
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: darkorange; /* Warna saat tombol dihover */
+        }
+
+        /* Daftar Isi */
+        .content {
+            padding: 20px;
+            background: white;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        .scroll-container {
+            display: flex;
+            overflow: hidden;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .scroll-container.left-to-right {
+            animation: scroll-left 12s linear infinite;
+        }
+
+        .scroll-container.right-to-left {
+            animation: scroll-right 12s linear infinite;
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes scroll-right {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        .product-card {
+            flex: 0 0 auto;
+            width: 45px;
+            height: 45px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 10px;
+            color: orange;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        /* Daftar Isi Hasil Pencarian */
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .search-results .category {
+            margin-bottom: 20px;
+        }
+
+        .search-results .category h3 {
+            font-size: 18px;
+            color: orange;
+            margin-bottom: 10px;
+        }
+
+        .search-results .category .product-list {
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-results .product-card {
+            width: 45px;
+            height: 35px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: orange;
+            color: white;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .menu-nav a {
+                width: 80%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="Logo Kiri" class="logo-left">
+            <img src="assets/logo104.png" alt="Logo Kanan" class="logo-right">
+        </div>
+        <div class="title">Gen-BETA'²⁵ WAIKABUBAK</div>
+        <div class="search-box">
+            <input type="text" placeholder="Cari produk...">
+            <button>Cari</button>
+        </div>
+    </div>
+
+    <!-- Daftar Isi -->
+    <div class="content">
+        <h2>Product Best Seller</h2>
+        <div class="scroll-container left-to-right">
+            <!-- 15 Gambar Produk -->
+            <div class="product-card"><img src="assets/produk1.jpg" alt="Produk 1"></div>
+            <div class="product-card"><img src="assets/produk2.jpg" alt="Produk 2"></div>
+            <div class="product-card"><img src="assets/produk3.jpg" alt="Produk 3"></div>
+            <!-- Tambahkan 12 gambar lainnya -->
+        </div>
+
+        <h2>New Product</h2>
+        <div class="scroll-container right-to-left">
+            <!-- 15 Gambar Produk -->
+            <div class="product-card"><img src="assets/new1.jpg" alt="Produk Baru 1"></div>
+            <div class="product-card"><img src="assets/new2.jpg" alt="Produk Baru 2"></div>
+            <div class="product-card"><img src="assets/new3.jpg" alt="Produk Baru 3"></div>
+            <!-- Tambahkan 12 gambar lainnya -->
+        </div>
+    </div>
+
+    <!-- Daftar Isi Hasil Pencarian -->
+    <div class="content search-results">
+        <div class="category">
+            <h3>○ Best Seller</h3>
+            <div class="product-list">
+                <!-- 5 Gambar Produk -->
+                <div class="product-card"><img src="assets/best1.jpg" alt="Best Seller 1"></div>
+                <div class="product-card"><img src="assets/best2.jpg" alt="Best Seller 2"></div>
+                <!-- Tambahkan 3 gambar lainnya -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>○ Produk Termurah</h3>
+            <div class="product-list">
+                <!-- 5 Gambar Produk -->
+                <div class="product-card"><img src="assets/termurah1.jpg" alt="Termurah 1"></div>
+                <div class="product-card"><img src="assets/termurah2.jpg" alt="Termurah 2"></div>
+                <!-- Tambahkan 3 gambar lainnya -->
+            </div>
+        </div>
+
+        <div class="category">
+            <h3>○ Produk Serupa</h3>
+            <div class="product-list">
+                <!-- 5 Gambar Produk -->
+                <div class="product-card"><img src="assets/serupa1.jpg" alt="Serupa 1"></div>
+                <div class="product-card"><img src="assets/serupa2.jpg" alt="Serupa 2"></div>
+                <!-- Tambahkan 3 gambar lainnya -->
+            </div>
+        </div>
+    </div>
+    <!-- Tombol Menu -->
+  <nav>
+            <button onclick="location.href='beranda.html'">Home</button>
+            <button onclick="location.href='trans-line.html'">Trans-Line</button>
+            <button onclick="location.href='mall-line.html'">Mall-Line</button>
+            <button onclick="location.href='ppob.html'">PPOB</button>
+            <button onclick="location.href='index.html'">Ticket-Line</button>
+            <button onclick="location.href='service-line.html'">Service-Line</button>
+            <button onclick="location.href='travel.html'">TraVel</button>
+            <button onclick="location.href='call-police.html'">Call Police</button>
+        </nav>
+</nav>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 GEN-BETA'²⁵ WAIKABUBAK</p>
+    </footer>
+</body>
+</html>
