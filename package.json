@@ -8,8 +8,15 @@
     "start": "next start",
     "export": "next export"
   },
-"dependencies": {
-  "next": "latest",
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-},
+  "dependencies": {
+    "next": "latest",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "latest"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-next": "latest",
+    "prettier": "^2.7.1"
+  }
+}
