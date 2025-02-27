@@ -8,18 +8,8 @@
     "start": "next start",
     "export": "next export"
   },
-  "dependencies": {
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest",
-    "axios": "^0.27.2",
-    "styled-components": "^5.3.5",
-    "react-icons": "^4.4.0",
-    "react-query": "^3.39.2"
-  },
-  "devDependencies": {
-    "eslint": "^8.23.0",
-    "eslint-config-next": "latest",
-    "prettier": "^2.7.1"
-  }
-}
+"dependencies": {
+  "next": "latest",
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0",
+},
