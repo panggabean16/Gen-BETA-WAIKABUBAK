@@ -16,12 +16,10 @@
     "styled-components": "^5.3.5",
     "react-icons": "^4.4.0",
     "react-query": "^3.39.2"
-    // Tambahkan dependensi lain sesuai kebutuhan
   },
   "devDependencies": {
-    "eslint": "^8.23.0", // Linter untuk JavaScript
-    "eslint-config-next": "latest", // Konfigurasi ESLint untuk Next.js
-    "prettier": "^2.7.1" // Formatter kode
-    // Tambahkan devDependencies lain sesuai kebutuhan
+    "eslint": "^8.23.0",
+    "eslint-config-next": "latest",
+    "prettier": "^2.7.1"
   }
 }
