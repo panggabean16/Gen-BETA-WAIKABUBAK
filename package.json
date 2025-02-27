@@ -1,22 +1,15 @@
 {
-  "name": "gen-beta-waikabubak",
+  "name": "my-project",
   "version": "1.0.0",
-  "description": "Website Gen-BETA'²⁵ WAIKABUBAK",
+  "description": "Proyek saya tanpa framework preset",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "next": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-query": "latest"
-  },
-  "devDependencies": {
-    "eslint": "^8.23.0",
-    "eslint-config-next": "latest",
-    "prettier": "^2.7.1"
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
 }
