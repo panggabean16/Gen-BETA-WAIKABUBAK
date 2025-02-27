@@ -1,3 +1,5 @@
-"scripts": {
-  "build": "echo 'No build required'"
+{
+  "scripts": {
+    "build": "echo 'No build required'"
+  }
 }
