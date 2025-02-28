@@ -82,45 +82,7 @@
             box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
         }
 
-        .submit-button {
-            padding: 15px 30px;
-            background: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .submit-button:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-        }
-
-         nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
-            flex-wrap: wrap;
-        }
-
-        nav button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        nav button:hover {
-            background-color: #2980b9;
-        }
-
+        
         /* Footer */
         footer {
             background: black;
@@ -164,9 +126,8 @@
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
+<body>    
+<header>
         <div class="header-logo-container">
             <img src="assets/logo.png" class="logo-img" alt="Logo Gen-BETA">
             <div class="logo-text">
@@ -174,9 +135,18 @@
             </div>
         </div>
     </header>
-
-    <!-- Registration Section -->
-    <main class="registration-container">
+        <div class="scrolling-logos">
+        <div class="logo-track">
+        <img src="assets/trans-line-logo.png" class="logo-img-small" alt="Trans Line">
+        <img src="assets/mall-line-logo.png" class="logo-img-small" alt="Mall Line">
+        <img src="assets/ppob-logo.png" class="logo-img-small" alt="PPOB">
+        <img src="assets/ticket-line-logo.png" class="logo-img-small" alt="Ticket Line">
+        <img src="assets/service-line-logo.png" class="logo-img-small" alt="Service Line">
+        <img src="assets/travel-logo.png" class="logo-img-small" alt="Travel">
+        <img src="assets/police-logo.png" class="logo-img-small" alt="Police">    
+           </div>
+        </div>    
+        <main class="registration-container">
         <h2 style="text-align: center; margin-bottom: 30px; color: #2e7d32;">Daftar Anggota Baru</h2>
         <form class="registration-form" onsubmit="sendWhatsAppVerification(event)">
             <input type="tel" 
@@ -188,19 +158,7 @@
             <button type="submit" class="submit-button">Verifikasi via WhatsApp</button>
         </form>
     </main>
-        <nav>
-            <button onclick="location.href='beranda.html'">Home</button>
-            <button onclick="location.href='trans-line.html'">Trans-Line</button>
-            <button onclick="location.href='mall-line.html'">Mall-Line</button>
-            <button onclick="location.href='ppob.html'">PPOB</button>
-            <button onclick="location.href='index.html'">Ticket-Line</button>
-            <button onclick="location.href='service-line.html'">Service-Line</button>
-            <button onclick="location.href='travel.html'">TraVel</button>
-            <button onclick="location.href='call-police.html'">Call Police</button>
-        </nav>
-    </div>
-
-    <!-- Footer -->
+        
     <footer>
         <div class="social-links">
             <a href="https://tiktok.com/genbeta25" target="_blank">TikTok</a>
