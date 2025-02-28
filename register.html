@@ -17,6 +17,7 @@
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #333;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         /* Header */
@@ -24,6 +25,7 @@
             text-align: center;
             padding: 20px;
             background: orange;
+            position: relative;
         }
 
         .logo-img {
@@ -82,14 +84,66 @@
             box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
         }
 
-        
+        .submit-button {
+            padding: 15px 30px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+
+        /* Logo Scroll Animation */
+        .logo-scroll-container {
+            overflow: hidden;
+            position: relative;
+            margin: 50px 0;
+            background: rgba(255,255,255,0.3);
+            padding: 15px 0;
+            border-radius: 10px;
+        }
+
+        .logo-scroll {
+            display: flex;
+            animation: scroll 25s linear infinite;
+            width: max-content;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .menu-logo {
+            width: 65px;
+            height: 65px;
+            margin: 0 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            object-fit: contain;
+        }
+
+        .menu-logo:hover {
+            transform: scale(1.2) rotate(15deg);
+            filter: brightness(1.1);
+        }
+
         /* Footer */
         footer {
             background: black;
             color: white;
             padding: 30px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: auto;
         }
 
         .social-links {
@@ -103,11 +157,12 @@
             color: white;
             text-decoration: none;
             font-size: 1.2rem;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .social-links a:hover {
             color: #4caf50;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 768px) {
@@ -123,11 +178,18 @@
             .form-input {
                 font-size: 14px;
             }
+            
+            .menu-logo {
+                margin: 0 15px;
+                width: 55px;
+                height: 55px;
+            }
         }
     </style>
 </head>
-<body>    
-<header>
+<body>
+    <!-- Header -->
+    <header>
         <div class="header-logo-container">
             <img src="assets/logo.png" class="logo-img" alt="Logo Gen-BETA">
             <div class="logo-text">
@@ -135,18 +197,9 @@
             </div>
         </div>
     </header>
-        <div class="scrolling-logos">
-        <div class="logo-track">
-        <img src="assets/trans-line-logo.png" class="logo-img-small" alt="Trans Line">
-        <img src="assets/mall-line-logo.png" class="logo-img-small" alt="Mall Line">
-        <img src="assets/ppob-logo.png" class="logo-img-small" alt="PPOB">
-        <img src="assets/ticket-line-logo.png" class="logo-img-small" alt="Ticket Line">
-        <img src="assets/service-line-logo.png" class="logo-img-small" alt="Service Line">
-        <img src="assets/travel-logo.png" class="logo-img-small" alt="Travel">
-        <img src="assets/police-logo.png" class="logo-img-small" alt="Police">    
-           </div>
-        </div>    
-        <main class="registration-container">
+
+    <!-- Registration Section -->
+    <main class="registration-container">
         <h2 style="text-align: center; margin-bottom: 30px; color: #2e7d32;">Daftar Anggota Baru</h2>
         <form class="registration-form" onsubmit="sendWhatsAppVerification(event)">
             <input type="tel" 
@@ -158,7 +211,21 @@
             <button type="submit" class="submit-button">Verifikasi via WhatsApp</button>
         </form>
     </main>
-        
+
+    <!-- Logo Scroll -->
+    <div class="logo-scroll-container">
+        <div class="logo-scroll">
+            <img src="assets/logo2.png" alt="Trans-Line" class="menu-logo" onclick="location.href='trans-line.html'">
+            <img src="assets/logo104.png" alt="Mall-Line" class="menu-logo" onclick="location.href='mall-line.html'">
+            <img src="assets/logo105.png" alt="PPOB" class="menu-logo" onclick="location.href='ppob.html'">
+            <img src="assets/logo106.png" alt="Ticket-Line" class="menu-logo" onclick="location.href='ticket-line.html'">
+            <img src="assets/logo013.png" alt="Service-Line" class="menu-logo" onclick="location.href='service-line.html'">
+            <img src="assets/logo019.png" alt="Travel" class="menu-logo" onclick="location.href='travel.html'">
+            <img src="assets/logo101.png" alt="Call Police" class="menu-logo" onclick="location.href='call-police.html'">
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <div class="social-links">
             <a href="https://tiktok.com/genbeta25" target="_blank">TikTok</a>
@@ -175,8 +242,8 @@
             const phoneNumber = phoneInput.value.trim().replace(/[- ]/g, '');
 
             // Validasi nomor
-            if (!phoneNumber.match(/^(08|\+628)[1-9][0-9]{7,10}$/)) {
-                alert('Format nomor tidak valid! Gunakan format 08xxxxxxxxx');
+            if (!/^08[1-9]\d{7,10}$/.test(phoneNumber)) {
+                alert('Format nomor tidak valid! Gunakan format 08xxxxxxxxx (10-13 digit)');
                 return;
             }
 
@@ -184,7 +251,7 @@
             const otp = Math.floor(100000 + Math.random() * 900000);
             
             // Format nomor untuk URL WhatsApp
-            const formattedNumber = phoneNumber.startsWith('08') ? '62' + phoneNumber.slice(1) : phoneNumber;
+            const formattedNumber = '62' + phoneNumber.slice(1);
             
             // Pesan verifikasi
             const message = encodeURIComponent(
@@ -195,7 +262,8 @@
             );
             
             // Buka WhatsApp
-            window.open(`https://wa.me/${formattedNumber}?text=${message}`, '_blank');
+            const waLink = `https://wa.me/${formattedNumber}?text=${message}`;
+            window.open(waLink, '_blank');
             
             // Simpan OTP dan redirect
             localStorage.setItem('tempOTP', otp);
@@ -205,4 +273,4 @@
         }
     </script>
 </body>
-</html>
+            </html>        
